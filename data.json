@@ -1,0 +1,116 @@
+{
+  "adminCode": "123456",
+  "location": "https://maps.app.goo.gl/rzjayV3PkQqv2TyH9",
+  "merchandise": [
+    {
+      "id": "1780227978566-ya7kallem2",
+      "name": "TODY",
+      "price": 10,
+      "quantity": 50,
+      "promotion": "sem promoção"
+    },
+    {
+      "id": "1780231377665-4hhvawiu8g2",
+      "name": "sacola",
+      "price": 50,
+      "quantity": 41200,
+      "promotion": "sem promoção"
+    },
+    {
+      "id": "1780231391632-byuhj2254es",
+      "name": "parafuso",
+      "price": 412,
+      "quantity": 42,
+      "promotion": "0"
+    },
+    {
+      "id": "1780231402712-iphzmwf9np",
+      "name": "parafuso 5",
+      "price": 50,
+      "quantity": 500,
+      "promotion": "10%"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1780227992562-rqf1ly0md4",
+      "name": "inacio",
+      "role": "funcionario nivel 4"
+    },
+    {
+      "id": "1780233088156-zqq4kpa8c5",
+      "name": "SUS",
+      "role": "funcionario nivel 4"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "name": "Administrador",
+      "email": "admin@mercearia.com",
+      "password": "admin",
+      "cart": []
+    },
+    {
+      "username": "inacio gabriel silva ferreira",
+      "name": "Inacio Gabriel Silva Ferreira",
+      "password": "inacio2010",
+      "cart": [
+        {
+          "id": "1780225633739-2r0fl08bx5o",
+          "name": "TODY",
+          "price": 10,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "username": "teste+bot2@local.test",
+      "email": "teste+bot2@local.test",
+      "password": "senha123",
+      "cart": []
+    },
+    {
+      "username": "joao@local.test",
+      "name": "Joao da Silva",
+      "email": "joao@local.test",
+      "password": "abc12345",
+      "cart": []
+    },
+    {
+      "username": "maria@local.test",
+      "name": "Maria Teste",
+      "email": "maria@local.test",
+      "password": "senha987",
+      "cart": []
+    },
+    {
+      "username": "inaciogabrielsferreira@gmail.com",
+      "name": "Inacio Gabriel",
+      "email": "inaciogabrielsferreira@gmail.com",
+      "password": "inacio!2010",
+      "cart": [
+        {
+          "id": "1780227978566-ya7kallem2",
+          "name": "TODY",
+          "price": 10,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "username": "teste.nome@local.test",
+      "name": "Teste Nome",
+      "email": "teste.nome@local.test",
+      "password": "senha123",
+      "cart": [
+        {
+          "id": "1780227978566-ya7kallem2",
+          "name": "TODY",
+          "price": 10,
+          "quantity": 999
+        }
+      ]
+    }
+  ]
+}
