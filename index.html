@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercearia Mauro Né</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div>
+        <h1 class="site-title">Mercearia Mauro Né</h1>
+        <p class="site-subtitle">Bem-vindo! Aqui você consulta preços e controla mercadorias em tempo real com um painel seguro e moderno.</p>
+      </div>
+      <div id="user-panel" class="user-panel">
+        <div class="user-info">
+          <span id="user-welcome">Faça login para ver o carrinho.</span>
+          <button id="logout-button" class="small-button hidden">Sair</button>
+        </div>
+        <button id="cart-toggle" class="icon-button hidden" aria-label="Abrir carrinho">
+          🛒 <span id="cart-badge" class="cart-badge hidden">0</span>
+        </button>
+      </div>
+    </div>
+    <div id="cart-dropdown" class="cart-dropdown hidden">
+      <div class="cart-dropdown-header">
+        <strong>Seu carrinho</strong>
+        <button id="cart-close" class="icon-button" aria-label="Fechar carrinho">✕</button>
+      </div>
+      <div id="cart-summary" class="cart-summary"></div>
+      <div id="cart-dropdown-content" class="cart-dropdown-content"></div>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <button class="nav-button active" data-target="home">Início</button>
+    <button class="nav-button" data-target="products">Olhar Mercadorias</button>
+    <button class="nav-button" data-target="location">Localização</button>
+    <button class="nav-button" data-target="employees">Funcionários</button>
+    <button class="nav-button" data-target="admin">Admin</button>
+  </nav>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="panel">
+        <h2>Bem-vindo à Mercearia Mauro Né</h2>
+        <p>Para personalizar preços e carrinho, faça login ou registre sua conta.</p>
+      </div>
+
+      <div class="split-panel">
+        <div class="panel login-card">
+          <h3>Login</h3>
+          <form id="login-form">
+            <label>Nome <input type="text" id="login-name" placeholder="Seu nome" required /></label>
+            <label>E-mail <input type="email" id="login-email" placeholder="nome@gmail.com" required /></label>
+            <label>Senha <input type="password" id="login-password" required /></label>
+            <button type="submit">Entrar</button>
+          </form>
+          <p id="auth-message" class="message"></p>
+        </div>
+
+        <div class="panel register-card">
+          <h3>Cadastro</h3>
+          <form id="register-form">
+            <label>Nome <input type="text" id="register-name" placeholder="Seu nome completo" required /></label>
+            <label>E-mail <input type="email" id="register-email" placeholder="nome@gmail.com" required /></label>
+            <label>Senha <input type="password" id="register-password" required /></label>
+            <label>Confirmar senha <input type="password" id="register-confirm-password" required /></label>
+            <button type="submit">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="page">
+      <div class="panel">
+        <h2>Mercadorias</h2>
+        <p>Adicione produtos ao carrinho para ver a base de preço. Compra apenas na loja física.</p>
+      </div>
+      <div id="product-list" class="grid"></div>
+      <div id="cart-panel" class="panel"></div>
+    </section>
+
+    <section id="location" class="page">
+      <div class="panel">
+        <h2>Localização</h2>
+        <p id="location-text">Rua Principal, 123 - Centro</p>
+        <p id="location-description">Mercearia Mauro Né fica perto do mercado municipal.</p>
+        <p id="service-description">Atendimento sempre com o melhor preço para você.</p>
+      </div>
+    </section>
+
+    <section id="employees" class="page">
+      <div class="panel">
+        <h2>Funcionários</h2>
+        <p>Conheça a equipe responsável por atender você.</p>
+      </div>
+      <div id="employee-list" class="grid"></div>
+    </section>
+
+    <section id="admin" class="page">
+      <div class="panel">
+        <h2>Área Admin</h2>
+        <p>Esta seção precisa do código de acesso administrativo.</p>
+      </div>
+
+      <div class="panel admin-card-panel" id="admin-lock-panel">
+        <label>Código admin <input type="password" id="admin-code-input" /></label>
+        <button id="admin-unlock-button">Liberar Admin</button>
+        <p id="admin-lock-message" class="message"></p>
+      </div>
+
+      <div id="admin-panel" class="hidden">
+        <div id="admin-message" class="message"></div>
+        <div class="admin-sections">
+          <section class="admin-section panel">
+            <h3>Adicionar mercadoria</h3>
+            <form id="add-product-form">
+              <label>Nome <input type="text" id="product-name" required /></label>
+              <label>Preço <input type="number" id="product-price" min="0" step="0.01" required /></label>
+              <label>Quantidade <input type="number" id="product-quantity" min="0" required /></label>
+              <label>Promoção <input type="text" id="product-promotion" /></label>
+              <button type="submit">Adicionar mercadoria</button>
+            </form>
+          </section>
+
+          <section class="admin-section panel">
+            <h3>Gerenciar mercadorias</h3>
+            <div id="admin-product-list" class="grid admin-list"></div>
+          </section>
+
+          <section class="admin-section panel">
+            <h3>Adicionar funcionário</h3>
+            <form id="add-employee-form">
+              <label>Nome <input type="text" id="employee-name" required /></label>
+              <label>Cargo <input type="text" id="employee-role" required /></label>
+              <label>Foto URL <input type="text" id="employee-image" placeholder="https://..." /></label>
+              <button type="submit">Adicionar funcionário</button>
+            </form>
+          </section>
+
+          <section class="admin-section panel">
+            <h3>Gerenciar funcionários</h3>
+            <div id="admin-employee-list" class="grid admin-list"></div>
+          </section>
+
+          <section class="admin-section panel">
+            <h3>Outros</h3>
+            <form id="change-code-form" class="admin-inline-form">
+              <label>Novo código <input type="text" id="new-admin-code" required /></label>
+              <button type="submit">Atualizar código</button>
+            </form>
+            <form id="change-location-form" class="admin-inline-form">
+              <label>Localização <input type="text" id="new-location" required /></label>
+              <label>Descrição 1 <input type="text" id="location-description-input" required /></label>
+              <label>Descrição 2 <input type="text" id="service-description-input" required /></label>
+              <button type="submit">Atualizar localização</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mercearia Mauro Né - Controle de mercadorias, funcionários e carrinho com persistência.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
